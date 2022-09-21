@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('77e2adff7bb497ef9112116ca53acc8c');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '코인은 혼자 하기 어렵다!',
+        description: '우리 같이 해요.',
+        imageUrl:
+          'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b168c274-7104-42eb-b2e3-6f2b50ee5f64/%EC%88%98%EC%9D%B5_%EC%9D%B8%EC%A6%9D_2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220921%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220921T021122Z&X-Amz-Expires=86400&X-Amz-Signature=558189c09a6cf9b105fb822858772c23aaf91cfea529378096ec1ea930c84906&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25EC%2588%2598%25EC%259D%25B5%2520%25EC%259D%25B8%25EC%25A6%259D%25202.jpg%22&x-id=GetObject',
+        link: {
+          mobileWebUrl: 'https://bit.ly/샤크팀',
+          webUrl: 'https://bit.ly/샤크팀',
+        },
+      },
+      social: {
+        likeCount: 5,780, //99999가 최대입니다
+        commentCount: 672, //99999가 최대입니다
+        sharedCount: 993, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: '무료 참여하기',
+          link: {
+            mobileWebUrl: 'https://bit.ly/샤크팀',
+            webUrl: 'https://bit.ly/샤크팀',
+          },
+        },
+      ],
+    })
+  }
+</script>
+<!-- www.blackcats4567.com -->
+<!-- 이미지/버튼 클릭 시 주소는 Kakao Developers의 애플리케이션 > 플랫폼 > Web에 넣어야 클릭했을때 성공적으로 표시됩니다 -->
+  </body>
+</html>
